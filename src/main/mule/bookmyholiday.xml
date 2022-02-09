@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="62dc8f29-2643-4fe0-9875-964ba393e9ea" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="bookmyholidayFlow" doc:id="272516ad-adde-4863-8fc4-f43c6940f9e3" >
+		<http:listener doc:name="Listener" doc:id="c8dea75f-00a2-4871-b947-b2429d56641c" config-ref="HTTP_Listener_config" path="/myholiday"/>
+		<set-payload value="Welcome To book my holiday" doc:name="Set Payload" doc:id="4f09a52c-ae1a-4ead-9e07-c4cdc4cf43fe" />
+	</flow>
+</mule>
